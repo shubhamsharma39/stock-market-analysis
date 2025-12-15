@@ -1,16 +1,14 @@
 # Terraform Backend Configuration
-# This configures remote state storage in S3 with DynamoDB for state locking
-# Backend must be initialized after S3 bucket and DynamoDB table are created
+# Remote state stored in S3 (ap-south-1)
 
 terraform {
   backend "s3" {
-    bucket         = "stock-dashboard-terraform-state2"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
-    dynamodb_table = "terraform-state-lock"
-    
-    # Uncomment after initial backend setup
-    # kms_key_id = "alias/terraform-state"
+    bucket = "stock-dashboard-terraform-state-shubham"
+    key    = "terraform.tfstate"
+    region = "ap-south-1"
+    encrypt = true
+
+    # New locking mechanism (no DynamoDB needed)
+    use_lockfile = true
   }
 }
