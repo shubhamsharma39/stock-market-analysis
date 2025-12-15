@@ -18,7 +18,7 @@
    docker-compose up -d
    ```
 
-4. **Access**: Open http://localhost:8080
+4. **Access**: Open http://localhost:8501
 
 5. **Stop**:
    ```bash
@@ -98,7 +98,7 @@ python scripts/validate_structure.py
 docker build -f docker/Dockerfile -t stock-dashboard .
 
 # Run container
-docker run -p 8080:8080 -e ALPHA_VANTAGE_API_KEY=your_key stock-dashboard
+docker run -p 8501:8080 -e ALPHA_VANTAGE_API_KEY=your_key stock-dashboard
 
 # Or use docker-compose
 cd docker
@@ -163,7 +163,7 @@ mypy src/
 docker build -f docker/Dockerfile -t stock-dashboard .
 
 # Run
-docker run -p 8080:8080 -e ALPHA_VANTAGE_API_KEY=key stock-dashboard
+docker run -p 8501:8080 -e ALPHA_VANTAGE_API_KEY=key stock-dashboard
 
 # Compose
 cd docker
@@ -194,7 +194,7 @@ docker ps
 docker stop <container-id>
 
 # Or use a different port
-docker run -p 8081:8080 ...
+docker run -p 8501:8080 ...
 ```
 
 ### API Rate Limiting
@@ -224,4 +224,4 @@ MIT License - See LICENSE file
 ---
 
 **Version**: 1.0.0  
-**Last Updated**: November 17, 2025
+**Last Updated**: December 15, 2025

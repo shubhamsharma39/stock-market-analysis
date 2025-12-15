@@ -2,6 +2,12 @@
 
 A modern Python Streamlit application for real-time stock market data visualization and analysis, containerized with Docker for easy deployment.
 
+### 1. Application – Starting Page
+![Starting Page](screenshots/1.png)
+
+### 2. Application – Front Page
+![Front Page](screenshots/2.png)
+
 ## ⚠️ DISCLAIMER
 
 **This application is for educational and demonstration purposes only.**
@@ -27,7 +33,7 @@ See [QUICK_START.md](QUICK_START.md) for detailed setup instructions.
 # Docker (Recommended)
 cp config/.env.example .env  # Add your API key
 cd docker && docker-compose up -d
-# Access at http://localhost:8080
+# Access at http://localhost:8501
 
 # Local
 pip install -e . && streamlit run src/app.py
@@ -66,7 +72,7 @@ pip install -e . && streamlit run src/app.py
    ```
 
 4. **Access the dashboard**:
-   Open your browser and navigate to http://localhost:8080
+   Open your browser and navigate to http://localhost:8501
 
 5. **Stop the application**:
    ```bash
@@ -167,7 +173,7 @@ Additional settings can be modified in `config.py`:
 
 ### Docker Compose
 - Service name: `stock-dashboard`
-- Port mapping: `8080:8080`
+- Port mapping: `8501:8080`
 - Environment variables loaded from `.env` file
 - Restart policy: `unless-stopped`
 - Health check enabled
@@ -219,4 +225,40 @@ This application uses the Alpha Vantage API for stock market data.
 - API Documentation: https://www.alphavantage.co/documentation/
 - Free API key: https://www.alphavantage.co/support/#api-key
 - Rate limits: 5 requests/minute (free tier)
+
+## Deployment takes ~5–10 minutes
+
+### 3. Security Group (SG)
+![Security Group](screenshots/3.png)
+
+### 4. Target Group
+![Target Group](screenshots/4.png)
+
+### 5. ECS Cluster & Service
+![ECS](screenshots/5.png)
+
+### 6. Subnets (Public & Private)
+![Subnets](screenshots/6.png)
+
+### 7. Application Load Balancer (ALB)
+![ALB](screenshots/7.png)
+
+### 8. ECR Repository
+![ECR](screenshots/8.png)
+
+### 9. AWS CodePipeline
+![CodePipeline](screenshots/9.png)
+
+### 10. CloudWatch Monitoring
+![CloudWatch](screenshots/10.png)
+
+### 11. CloudWatch Logs
+![Logs](screenshots/11.png)
+
+### 12. VPC
+![VPC](screenshots/12.png)
+
+### 13. S3 Bucket (Terraform State & Artifacts)
+![S3 Bucket](screenshots/13.png)
+
 
