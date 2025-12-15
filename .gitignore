@@ -1,4 +1,6 @@
+# ======================
 # Python
+# ======================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -8,23 +10,49 @@ venv/
 env/
 ENV/
 .venv
-/terraform/terraform.tfvars
 
+# ======================
+# Terraform (VERY IMPORTANT)
+# ======================
+.terraform/
+terraform/.terraform/
+*.tfstate
+*.tfstate.backup
+terraform.tfstate
+terraform.tfstate.backup
+
+# (Lock file keep bhi kar sakta hai, optional)
+# .terraform.lock.hcl
+
+# Terraform variables (secrets)
+terraform/terraform.tfvars
+*.tfvars
+
+# ======================
 # Streamlit
+# ======================
 .streamlit/
 
+# ======================
 # IDE
+# ======================
 .vscode/
 .idea/
 *.swp
 *.swo
 
+# ======================
 # OS
+# ======================
 .DS_Store
 Thumbs.db
 
-# Environment
+# ======================
+# Environment / Secrets
+# ======================
 .env
 
-# Docker
+# ======================
+# Docker / Logs
+# ======================
 *.log
